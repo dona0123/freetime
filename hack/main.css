@@ -1,0 +1,318 @@
+/* 
+덕성여자대학교 2023 해커톤_ 팀13_ 웹11_ 공강공간공장장 
+공강 시간 활용 사이트_ 메인 페이지_ css  
+*/
+
+body {
+  margin: 0px;
+}
+
+/* 중앙 타이틀  */
+h1 {
+  color: #000;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* _H2_Noto Sans KR_Light_60px */
+  font-family: Noto Sans KR;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 72px;
+  /* 120% */
+  letter-spacing: -0.5px;
+  margin-top: 190px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+
+/* 중앙 검색창 */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 628px;
+  margin: 0 auto;
+  position: relative;
+  top: -25px;
+}
+
+input[type=text] {
+  text-align: center;
+  width: 100%;
+  height: 32px;
+  font-size: 15px;
+  padding-left: 30px;
+  border-radius: 24px;
+  border: 2px solid var(--primary-primary-normal, #5383FF);
+  background: #FFF;
+}
+
+.search_icon {
+  width: 17px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type=text]:focus {
+  border: 2px solid #74ABFF;
+}
+
+
+
+/* 카테고리 버튼 */
+.kategorie {
+  width: 100px;
+  height: 32px;
+  flex-shrink: 0;
+  font-size: 15px;
+  border: 0px solid black;
+  border-radius: 16px;
+  background: var(--grayscale-f-0, #F0F0F0);
+  background-color: transparent;
+  margin-left: 8px;
+  margin-top: -10px;
+
+
+  color: #000;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  background: #F0F0F0;
+
+  /* _Body 2_Noto Sans KR_Regular_14px */
+  font-family: Noto Sans KR;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+  letter-spacing: 0.25px;
+
+  width: 100px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.kategorie:hover {
+  background-color: #74ABFF;
+}
+
+
+
+
+/* 커뮤니티, 로그인/회원가입 버튼 */
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  /* 아이콘과 텍스트 사이의 간격 */
+  top: 9px;
+}
+
+.right-button {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* 아이콘과 텍스트 사이의 간격 */
+}
+
+.right-button img {
+  max-width: 40px;
+  /* 이미지 최대 너비 */
+}
+
+
+img.right-button {
+  width: 24px;
+  height: 24px;
+}
+
+a.right-button {
+  text-decoration: none;
+  color: #000;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* _Subtitle 1_Noto Sans KR_Regular_16px */
+  font-family: Noto Sans KR;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+  letter-spacing: 0.15px;
+}
+
+.header-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  right: 24px;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.community_icon {
+  display: flex;
+  margin-top: 0px;
+  margin-right: -8px;
+  width: 21.8px;
+  height: 21.8px;
+}
+
+.community_button {
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  background-color: #74ABFF;
+}
+
+.anonymous_icon {
+  display: flex;
+  position: relative;
+  margin-top: 0px;
+  width: 18px;
+  height: 18px;
+
+}
+
+.community_text {
+  margin-left: 10px;
+  margin-right: 14px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: bold;
+}
+
+.anonymous_text {
+  margin-left: 4px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: bold;
+}
+
+
+.image {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .text,
+  .image {
+    grid-column: span 1;
+  }
+}
+
+.anonymous_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 4px solid #060606;
+  /* 테두리 스타일과 색상 지정 */
+  border-radius: 50%;
+  /* 원형 테두리를 위한 속성 */
+}
+
+
+/* 카테고리 별 콘텐츠 */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  
+}
+
+.text {
+  grid-column: span 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border: 2px solid rgb(252, 247, 247);
+  background-color: #FAFAFA;
+  border-radius: 15px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+
+  border-radius: 20px;
+background: var(--grayscale-fa, #FAFAFA);
+}
+
+.image {
+  grid-column: span 1;
+  
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .text,
+  .image {
+    grid-column: span 1;
+  }
+}
+
+/* 이미지 크기 설정 */
+.item.image img {
+
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+
+  border-radius: 10px;
+background: linear-gradient(360deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 100%);
+
+}
+
+/* 수평선 */
+hr {
+  width: 1120px;
+height: 1px;
+background: #8C8C8C;
+}

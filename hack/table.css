@@ -1,0 +1,278 @@
+/* 
+덕성여자대학교 2023 해커톤_ 팀13_ 웹11_ 공강공간공장장 
+공강 시간 활용 사이트_ 시간표_ css  
+*/
+
+
+
+/* 중앙 타이틀  */
+h1 {
+    text-align: center;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+ 
+/* 시간표 */
+table {
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .gray {
+    background-color: #e4e4e5;
+  }
+  
+  .checked {
+    background-color: #74ABFF;
+  }
+
+
+input[type=text] {
+    text-align: center;
+    border: 2px solid black;
+
+}
+/* 카테고리 버튼 */
+.kategorie {
+    width: 100px;
+    height: 20px;
+    font-size: 7px;
+   
+    background-color: transparent;
+    margin-left: 8px; 
+    margin-top: 12px; 
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold;
+  
+}
+/* 카테고리 버튼 */
+.kategorie1 {
+  width: 70px;
+  height: 20px;
+  font-size: 7px;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  margin-left: 50%; 
+  margin-top: 30px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+/* 카테고리 별 콘텐츠 */ 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold; 
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    grid-column: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 3px;
+  }
+  
+  .image {
+    grid-column: span 1;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .text,
+    .image {
+      grid-column: span 1;
+    }
+  }
+  .anonymous_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #060606; /* 테두리 스타일과 색상 지정 */
+    border-radius: 50%; /* 원형 테두리를 위한 속성 */
+  }
+  
+  .anonymous_text {
+    margin-left: 20px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 50%;
+    max-width: 500px; 
+    margin: 0 auto; 
+    position: relative; 
+}
+.anonymous_text1 {
+  margin-left: 10px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 30%;
+  max-width: 500px; 
+  margin: 0 auto; 
+  position: relative; 
+}
+.search {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 80%;
+    max-width: 500px; 
+    margin: 0 auto; 
+    position: relative; 
+}
+.border1{
+    border: 4px solid black;
+    border-radius: 20px;
+    width: 20%;
+    max-width: 500px; 
+    align-items: center; 
+    margin: 0 auto; 
+    position: relative; 
+}
+.anony {
+    display: flex;
+    margin-left: 20px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold; 
+    align-items: center;
+}
+
+.tabs {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;}
+  
+  /* 탭 스타일 */
+  .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    border-bottom: 3px solid #333333;
+    background-color: #f8f8f8;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .tab_item:hover {
+    opacity: 0.75;
+  }
+  
+  /* 라디오 버튼 UI삭제*/
+  input[name="tab_item"] {
+    display: none;
+  }
+  
+  /* 탭 컨텐츠 스타일 */
+  .tab_content {
+    display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  
+  /* 선택 된 탭 콘텐츠를 표시 */
+  #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content {
+    display: block;
+  }
+
+  #programming {
+    width: 192px;
+height: 48px;
+flex-shrink: 0;
+border-radius: 24px;
+background: var(--primary-primary-light, #74ABFF);
+
+/* Drop_Shadow */
+box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* 선택된 탭 스타일 */
+  .tabs input:checked + .tab_item {
+    background-color: #74ABFF;
+  }
+  
+
+
+
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .post-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .post-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .post-date {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+  }
+  

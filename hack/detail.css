@@ -1,0 +1,629 @@
+/*  모든 요소들은 default 마진, 패딩 제거 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 상단  */
+header {
+  position: fixed;
+  position: relative;
+  width: 100%;
+  height: 35px;
+  background: var(--grayscale-fa, #FAFAFA);
+}
+
+/* 화면에 너무 붙어 있어서...  */
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* header 영역  */
+header a {
+  text-decoration: none;
+  color: #333333;
+}
+
+
+/* 왼쪽 사이드 메뉴 */
+aside#left {
+  float: left;
+  margin-right: 1em;
+  width: 70px;
+  height: 100%;
+  flex-shrink: 0;
+  background: var(--grayscale-fa, #FAFAFA);
+  margin: 0;
+}
+
+ul#side {
+  position: relative;
+  top: 10px;
+  left: 4px;
+}
+
+aside#left ul {
+  list-style: none
+}
+
+#left li {
+  width: 100px;
+  align-content: center;
+  padding: 8px 2px;
+}
+
+aside#left ul li a {
+  color: black;
+  text-decoration: none;
+
+}
+#location-list {
+  width: 60px;
+}
+
+#location-list:hover {
+  background-color: rgb(222, 222, 222);
+  border-radius: 10px;
+}
+
+aside#right {
+  float: right;
+  width: 100px;
+}
+
+aside#main {
+  float: left;
+}
+
+/* 2차 이상의 메뉴를 숨기기 */
+#left>ul ul {
+  display: none;
+  position: fixed;
+}
+
+/* 사이트의 높이를 5000px로 만들어 스크롤 생성 */
+body {
+  height: 5000px;
+}
+
+/* 사이드바의 너비와 높이를 변수를 통해 통제 */
+:root {
+  --side-bar-width: 250px;
+  --side-bar-height: 90vh;
+}
+
+#left {
+  position: fixed;
+  /* 스크롤을 따라오도록 지정 */
+  width: var(--side-bar-width);
+  min-height: var(--side-bar-height);
+  /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+  margin-top: calc((100vh - var(--side-bar-height)) / 2);
+  /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+}
+
+/* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
+#left>ul>li {
+  position: relative;
+  width: 60px;
+}
+
+/* 모든 메뉴가 마우스 인식 시 반응 */
+#left ul>li:hover>a {
+  background-color: rgb(222, 222, 222);
+  border-bottom: 1px solid rgb(222, 222, 222);
+  border-radius: 29.5px;
+background: var(--grayscale-d-9, #D9D9D9);
+}
+
+/* 1차 메뉴의 항목이 마우스 인식 시에 2차 메뉴 등장 */
+#left>ul>li:hover>ul {
+  display: block;
+  position: absolute;
+
+  top: 0;
+  /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
+  left: 100%;
+  /* 2차 메뉴를 1차 메뉴의 너비만큼 이동 */
+
+  /* 1차 메뉴의 너비를 상속 */
+
+  background-color: #007bff;
+  
+  width: 270px;
+height: 1024px;
+flex-shrink: 0;;
+background: var(--grayscale-fa, #FAFAFA);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+
+
+#side {
+  position: absolute;
+  left: -15px;
+  top: -23px;
+}
+
+li.ano {
+  color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* _Subtitle 3_Noto Sans KR_DemiLight14px */
+font-family: Noto Sans KR;
+font-size: 14px;
+font-style: normal;
+font-weight: 370;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.1px;
+}
+
+
+/* 가운데 본문 영역 */
+section#main {
+  float: left;
+}
+
+
+
+img.icon {
+  width: 24px;
+height: 24px;
+flex-shrink: 0;
+}
+
+.icon {
+  display: flex;
+  max-width: 500px;
+  margin-left: 1em;
+  position: relative;
+  width: 15px;
+}
+
+.icon1 {
+  display: flex;
+  max-width: 500px;
+  margin-left: 1em;
+  position: relative;
+  width: 10px;
+}
+
+img.icons {
+  display: flex;
+
+  margin: 0 auto;
+
+
+  width: 700px;
+height: 400px;
+flex-shrink: 0;
+
+border-radius: 30px;
+background: url(<path-to-image>), lightgray 50% / cover no-repeat, #5383FF;
+
+}
+
+/* Reset some default button styles */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-text-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  /* 투명한 배경색 */
+  color: #007bff;
+  /* 버튼 텍스트 색상 */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  /* 버튼 패딩 조정 */
+}
+
+
+.image-text-button img {
+  max-width: 16px;
+  /* 이미지 크기 조정 */
+  margin-right: 5px;
+  /* 이미지와 텍스트 간격 조정 */
+}
+
+.image-text-button span {
+  font-size: 12px;
+  /* 텍스트 크기 조정 */
+}
+
+
+
+
+.ano {
+  margin-left: 4px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+
+}
+
+.ano1 {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+.anonymous_icon {
+  display: flex;
+  margin-top: 0px;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.header-icons {
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.btn01,
+.btn02 {
+  padding: 2px 4px 2px 4px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4em;
+  box-shadow: 1px 1px 2px #333;
+  border-radius: 15px;
+}
+
+.btn01 {
+  background-color: #fff;
+  color: #333;
+}
+
+.btn02 {
+  background-color: #FF3E00;
+  color: #fff;
+}
+
+.example01 {
+  padding: 5px;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 20px;
+}
+
+.btnCon:target {
+  background: #ccc;
+}
+
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #ffffff;
+
+  width: 700px;
+  margin: 0 auto;
+}
+
+/* 탭 스타일 */
+.tab_item {
+  width: calc(100%/2);
+  height: 50px;
+  border-bottom: 3px solid #333333;
+  background-color: #f8f8f8;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #333333;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+
+  background: #FFFFFF; 
+  border-radius: 20px;
+
+  width: 200px;
+height: 27px;
+flex-shrink: 0;
+
+/* Drop_Shadow */
+box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+
+position: relative;
+top: -33px;
+
+display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 10px;
+}
+
+.tab_item:hover {
+  background-color: #5383FF;
+}
+
+
+.tabs input:checked + .tab_item {
+  /* 선택된 탭 스타일 */
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #5383FF; /* 선택된 탭 배경색 */
+  color: #ffffff; /* 선택된 탭 텍스트 색상 */
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+/* 선택 된 탭 콘텐츠를 표시 */
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
+  display: block;
+}
+
+/* 선택된 탭 스타일 */
+.tabs input:checked+.tab_item {
+  text-decoration-thickness: 3px;
+  font-weight: bold;
+}
+
+
+
+/* 개인 정보 보기 */
+#right {
+  padding: 0;
+  position: relative;
+  left: 140px;
+  top: 4px;
+}
+
+div.user-profile {
+  width: 200px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  position: relative;
+  margin: 0;
+}
+
+.header-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.user-profile {
+  display: flex;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.anonymous_icon,
+.dropdown-icon {
+  width: 20px;
+
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.user-name {
+  margin-right: 5px;
+  white-space: nowrap;
+  /* 한 줄로만 표시 */
+  overflow: hidden;
+  /* 너비 초과 텍스트 자르기 */
+  text-overflow: ellipsis;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  top: 100%;
+  right: 0;
+
+  width: 238px;
+height: 200px;
+flex-shrink: 0;
+
+border-radius: 0px 0px 24px 24px;
+background: var(--grayscale-fa, #FAFAFA);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#name {
+ position: relative; 
+ top:-53px; 
+ left: 0px;
+ color: #000;
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* _H6_Noto Sans KR_Medium_20px */
+font-family: Noto Sans KR;
+font-size: 20px;
+font-style: normal;
+font-weight: 548;
+line-height: 24px; /* 120% */
+letter-spacing: 0.15px;
+
+display: block;
+}
+
+#idname {
+  color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* _Subtitle 3_Noto Sans KR_DemiLight14px */
+font-family: Noto Sans KR;
+font-size: 14px;
+font-style: normal;
+font-weight: 350;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.1px;
+
+position: relative;
+top: -50px;
+    left: 87px;
+}
+
+hr.menu-list {
+  width: 210px;
+height: 1px;
+background: #8C8C8C;
+position: relative;
+left: 10px;
+top: -20px;
+}
+
+span.menu-list {
+  list-style: none;
+    position: relative;
+    padding: 0;
+    left: 10px;
+
+    color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* _Subtitle 3_Noto Sans KR_DemiLight14px */
+font-family: Noto Sans KR;
+font-size: 14px;
+font-style: normal;
+font-weight: 350;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.1px;
+left: 20px;
+}
+
+p.menu-list {
+  width: 190px;
+height: 24px;
+flex-shrink: 0;
+border-radius: 29.5px;
+background: var(--grayscale-d-9, #D9D9D9);
+
+/* Mini_Button */
+box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.user-profile:hover .dropdown-content {
+  display: block;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.menu-list li:first-child {
+  border-top: none;
+}
+
+
+/* 좌측 상단 로고  */
+
+div.header-icons {
+  position: relative;
+  padding: 0%;
+  right: 1370px;
+  top: 2px;
+}
+
+img.header-icons {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+span.header-icons {
+  color: #000;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* _Subtitle 1_Noto Sans KR_Regular_16px */
+  font-family: Noto Sans KR;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+  letter-spacing: 0.15px;
+
+  padding: 0%;
+}
+
+
+/* 중앙 글씨  */
+h1.title {
+  color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* _H1_Noto Sans KR_Light_96px */
+font-family: Noto Sans KR;
+font-size: 80px;
+font-style: normal;
+font-weight: 300;
+line-height: 112px; /* 116.667% */
+letter-spacing: -1.5px;
+}
+
+
+h3.title {
+  color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* H5_Noto Sans KR_Regular_24px */
+font-family: Noto Sans KR;
+font-size: 20px;
+font-style: normal;
+font-weight: 550;
+line-height: 24px; /* 100% */
+letter-spacing: 0.18px;
+}
+
+p.title {
+  color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* _Body 1_Noto Sans KR_Regular_16px */
+font-family: Noto Sans KR;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+letter-spacing: 0.5px;
+}

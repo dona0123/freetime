@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 목록</title>
+</head>
+<body>
+    <h1>게시판 목록</h1>
+    <ul id="boardList">
+        <!-- 게시글 목록을 동적으로 생성 -->
+    </ul>
+    <a href="/board/create">새 글 작성</a>
+
+    <script>
+        // 서버로부터 게시글 목록을 받아와서 동적으로 생성
+        const boardList = [
+            { id: 1, title: '첫 번째 글' },
+            { id: 2, title: '두 번째 글' },
+            // ...
+        ];
+
+        const boardListElement = document.getElementById('boardList');
+        boardList.forEach(board => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `/board/${board.id}`;
+            a.textContent = board.title;
+            li.appendChild(a);
+            boardListElement.appendChild(li);
+        });
+    </script>
+</body>
+</html>

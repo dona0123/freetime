@@ -1,0 +1,106 @@
+<!-- 
+덕성여자대학교 2023 해커톤_ 팀13_ 웹11_ 공강공간공장장 
+공강 시간 활용 사이트_ 메인 페이지_ html  
+-->
+
+
+
+<!DOCTYPE html> 
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 사이트 제목  -->
+    <title>우주공강</title>
+
+    <!-- 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@300&family=Oswald&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@300;400&family=Oswald&display=swap"
+        rel="stylesheet">
+
+    <!-- css 파일  -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+
+<body>
+    <header>
+        <!-- 커뮤니티, 로그인/회원가입 버튼 -->
+        <div class="header-icons">
+            <a class="right-button" href="table.html" target="iframe1">
+              <img src="media/groups.png" alt="커뮤니티">
+              <span><strong>Community</strong></span>
+            </a>
+            
+            <a class="right-button" href="login.html" target="iframe1">
+              <img src="media/account_circle.png" alt="로그인/회원가입">
+              <span><strong>Log in</strong></span>
+            </a>
+          </div>
+    <br>
+
+    </header>
+    <!-- 중앙 타이틀 -->
+    <h1>SPAVE CAViTY</h1>
+    
+    <br><br>
+
+    <nav>
+        <!-- 중앙 검색창 -->
+        <div class="search">
+            <input type="text" id="clickable-element">
+            <img class="search_icon" src="media/돋보기_아이콘.png">
+        </div>
+    </nav>
+
+<br><br><br><br>
+<hr>
+
+    <section>
+        <!-- 카테고리 별 콘텐츠 -->
+        <div class="grid-container">
+            <div class="column">
+                <div class="item text">도서관</div>
+                <div class="item image">
+                  <img src="media/library.jfif" alt="Image 1" class="image-effect">
+                </div>
+                <div class="item image">
+                  <img src="media/library.jfif" alt="Image 1" class="image-effect">
+                </div>
+              </div>
+              
+            <div class="column">
+              <div class="item text">라온센터</div>
+              <div class="item image"><img src="media/laon.jpg" alt="Image 1"></div>
+              <div class="item image"><img src="media/laon.jpg" alt="Image 1"></div>
+              
+            </div>
+            <div class="column">
+              <div class="item text">차미리사</div>
+              <div class="item image"><img src="media/chamiri.jfif" alt="Image 1"></div>
+              <div class="item image"><img src="media/chamiri.jfif" alt="Image 1"></div>
+
+            </div>
+            <div class="column">
+              <div class="item text">자연대</div>
+              <div class="item image"><img src="media/jayeon.jpg" alt="Image 1"></div>
+              <div class="item image"><img src="media/jayeon.jpg" alt="Image 1"></div>
+           
+            </div>
+          </div>
+    </section>
+
+</body>
+
+</html>

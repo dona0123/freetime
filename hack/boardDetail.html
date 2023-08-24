@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세보기</title>
+</head>
+<body>
+    <h1 id="boardTitle"></h1>
+    <p id="boardBody"></p>
+    <p>작성자: <span id="boardWriter"></span></p>
+    <p>작성일: <span id="boardDate"></span></p>
+    <a href="#" id="updateLink">수정</a>
+    <button id="deleteButton">삭제</button>
+
+    <h2>댓글</h2>
+    <ul id="commentList">
+        <!-- 댓글 목록을 동적으로 생성 -->
+    </ul>
+
+    <form id="commentForm">
+        <input type="hidden" id="writerId" value="3">
+        <input type="text" id="commentBody" placeholder="댓글을 입력해주세요">
+        <input type="submit" value="작성 완료">
+    </form>
+    <a href="/board">목록으로</a>
+
+    <script>
+        const board = {
+            id: 1,
+            title: '글 제목',
+            body: '글 내용',
+            writer: '작성자',
+            insertDate: '작성일자'
+        };
+
+        const comments = [
+            { body: '댓글 내용', writerId: 3, insertDate: '댓글 작성일자' },
+            // ...
+        ];
+
+        const boardTitle = document.getElementById('boardTitle');
+        const boardBody = document.getElementById('boardBody');
+        const boardWriter = document.getElementById('boardWriter');
+        const boardDate = document.getElementById('boardDate');
+        const updateLink = document.getElementById('updateLink');
+        const deleteButton = document.getElementById('deleteButton');
+        const commentList = document.getElementById('commentList');
+        const commentForm = document.getElementById('commentForm');
+        const writerId = document.getElementById('writerId');
+        const commentBody = document.getElementById('commentBody');
+
+        boardTitle.textContent = board.title;
+        boardBody.textContent = board.body;
+        boardWriter.textContent = board.writer;
+        boardDate.textContent = board.insertDate;
+
+        updateLink.href = `/board/update/${board.id}`;
+        deleteButton.addEventListener('click', () => {
+            // 삭제 요청 보내는 로직
+        });
+
+        comments.forEach(comment => {
+            const li = document.createElement('li');
+            li.textContent = `${comment.body} (작성자: ${comment.writerId})`;
+            commentList.appendChild(li);
+        });
+
+        commentForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const newComment = {
+                body: commentBody.value,
+                writerId: writerId.value
+            };
+            // 새 댓글 추가 요청 보내는 로직
+            const li = document.createElement('li');
+            li.textContent = `${newComment.body} (작성자: ${newComment.writerId})`;
+            commentList.appendChild(li);
+            commentBody.value = '';
+        });
+    </script>
+</body>
+</html>

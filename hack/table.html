@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 사이트 제목  -->
+    <title>덕성여대 공강시간표</title>
+
+    <!-- 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@300&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@300;400&family=Oswald&display=swap" rel="stylesheet">
+    <style>
+        table {
+          width: 100%;
+          border: 1px solid #444444;
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid #444444;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+    <header>
+        <!-- 커뮤니티, 로그인/회원가입 버튼 -->
+        <div class="header-icons">
+            <div style="text-align: center;">
+                <a href="index.html" target="iframe1">
+                    <input class="kategorie" type="button" value="메인으로 돌아가기" >
+                </a>
+                <a href="match.html" target="iframe1">
+                    <input class="kategorie" type="button" value="매칭">
+                </a>
+            </div>
+        </div>
+        
+        <br><br><br>
+      
+        <div>
+            <img class="anonymous_icon" src="media/ds.png">
+        </div>
+        <span class="anonymous_text">김덕성</span>
+        <h6 class="anonymous_text1">@dukwoochego</h6>
+        <h6 class="anonymous_text1">덕성여대 20학번</h6>
+    </header>
+
+    <br>
+    <!-- 카테고리 버튼  -->
+    <div class="tabs"> 
+        <input id="programming" type="radio" name="tab_item">
+        <label class="tab_item" for="programming">게시판 목록</label>
+        <input id="design" type="radio" name="tab_item">
+        <label class="tab_item" for="design">쪽지</label>
+        
+        <div class="tab_content" id="programming_content">
+            <h1>게시판 목록</h1>
+            <ul id="boardList">
+                <!-- 게시글 목록을 동적으로 생성 -->
+            </ul>
+            <a href="/board/create">새 글 작성</a>
+        </div>
+        <div class="tab_content" id="design_content">
+            Thanks a lot
+        </div>
+    </div>
+    
+    <script>
+        // 서버로부터 게시글 목록을 받아와서 동적으로 생성
+        const boardList = [
+            { id: 1, title: '첫 번째 글' },
+            { id: 2, title: '두 번째 글' },
+            // ...
+        ];
+
+        const boardListElement = document.getElementById('boardList');
+        boardList.forEach(board => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `/board/${board.id}`;
+            a.textContent = board.title;
+            li.appendChild(a);
+            boardListElement.appendChild(li);
+        });
+    </script>
+</body>
+</html>
